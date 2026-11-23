@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Shadow Man",
+    "id": "SLUS-00895",
+    "boot_exe": "SLUS_008.95"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Shadow Man (USA).cue",
+    "bin_name": "Shadow Man (USA) (Track 1).bin",
+    "track_counts": [
+      2
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 534042768,
+      "md5": "763cd348b7f8da79963f97d05c19fb65",
+      "sha1": "4ad8a79eb29ef7b322051743d6aba645a347f403",
+      "crc32": "91079460"
+    },
+    "disc_fp": "65fa2a54cf75fe568acea4211f8ea19c654c720c3f00467b2cb358bcd079da65"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x800901C0",
+    "text_size": "0x000A5800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 1282,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

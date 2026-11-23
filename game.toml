@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Shadow Man"
+id = "SLUS-00895"
+players = 1
+exe = "disc/SLUS_008.95"
+disc = "disc/Shadow Man (USA).cue"
+discs = ["disc/Shadow Man (USA).cue"]
+disc_serials = ["SLUS-00895"]
+load_address = "0x80010000"
+entry_pc = "0x800901C0"
+text_size = "0x000A5800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Shadow Man (USA) (Track 1).bin"
+cue_name = "Shadow Man (USA).cue"
+boot_exe = "SLUS_008.95"
+known_sizes = [534042768]
+known_md5 = [
+  "763cd348b7f8da79963f97d05c19fb65",
+]
+known_sha1 = [
+  "4ad8a79eb29ef7b322051743d6aba645a347f403",
+]
+known_crc32 = [
+  "91079460",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Shadow Man Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 2
+required_disc_fp = "65fa2a54cf75fe568acea4211f8ea19c654c720c3f00467b2cb358bcd079da65"
